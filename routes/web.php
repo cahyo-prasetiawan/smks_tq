@@ -37,3 +37,16 @@ Route::get('/produk/{slug}', ShowProduk::class)->name('produk.show');
 Route::get('/profil', ProfilPage::class)->name('profil.index');
 
 Route::get('/visi-misi', VisiPage::class)->name('visi-misi.index');
+
+Route::get('/buat-admin-darurat', function () {
+    try {
+        $user = \App\Models\User::create([
+            'name' => 'Super Admin',
+            'email' => 'admin@smk.com',
+            'password' => bcrypt('password'), // Passwordnya: password
+        ]);
+        return 'Sukses! Admin berhasil dibuat. Silakan login.';
+    } catch (\Exception $e) {
+        return 'Gagal: ' . $e->getMessage();
+    }
+});

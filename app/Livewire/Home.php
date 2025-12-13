@@ -4,7 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Slider;
 use Livewire\Component;
-use App\Models\peminatan;
+use App\Models\Peminatan;
 use Livewire\Attributes\Title;
 use App\Models\galery;
 use App\Models\Berita;

@@ -21,7 +21,7 @@ class peminatan extends Model
             // Cek apakah ada data gambar
             if ($peminatan->image) {
                 // Hapus file fisik dari disk 'public'
-                Storage::disk('public')->delete($pemintan->image);
+                Storage::disk('public')->delete($peminatan->image);
             }
 
             // Jika Anda menggunakan RichEditor dan menyimpan gambar di dalam konten (body),

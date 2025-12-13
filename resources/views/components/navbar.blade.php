@@ -11,7 +11,7 @@
     
     @php
         // AMBIL DATA PEMINATAN DARI DATABASE
-        $navPeminatans = \App\Models\Peminatan::all();
+        $navPeminatans = \App\Models\peminatan::all();
 
         // 🟢 TAMBAHKAN INI: Ambil Data Profil
         $profil = \App\Models\Profil::query()->find(1); // Ambil record profil pertama

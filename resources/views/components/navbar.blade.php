@@ -11,7 +11,7 @@
     
     @php
         // AMBIL DATA PEMINATAN DARI DATABASE
-        $navPeminatans = \App\Models\peminatan::all();
+        $navPeminatans = \App\Models\Peminatan::all();
 
         // 🟢 TAMBAHKAN INI: Ambil Data Profil
         $profil = \App\Models\Profil::query()->find(1); // Ambil record profil pertama
@@ -173,6 +173,11 @@
                class="block px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('berita.*') ? 'bg-green-50 text-green-700' : 'text-gray-900 hover:bg-gray-50 hover:text-green-700' }}">
                 Artikel
             </a>
+            
+            <a href="{{ route('galeri.index') }}" 
+                   class="{{ request()->routeIs('galeri.*') ? 'text-yellow-400' : 'text-white' }} hover:text-yellow-200 font-bold transition">
+                    Galeri
+                </a>
             
             <a href="{{ route('produk.index') }}" class="block w-full text-center mt-4 px-6 py-3 border border-transparent text-sm font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 shadow-md">
                 Pesan Jasa / Produk

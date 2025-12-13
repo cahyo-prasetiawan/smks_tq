@@ -4,9 +4,9 @@ namespace App\Livewire;
 
 use App\Models\Slider;
 use Livewire\Component;
-use App\Models\peminatan;
+use App\Models\Peminatan;
 use Livewire\Attributes\Title;
-use App\Models\galery;
+use App\Models\Galery;
 use App\Models\Berita;
 use App\Models\Produk;
 use Livewire\WithPagination;
@@ -26,9 +26,9 @@ class Home extends Component
             ->latest() // Urutkan dari yang terbaru
             ->get();
        
-        $peminatans = peminatan::all();
+        $peminatans = Peminatan::all();
 
-        $galleries = galery::query()
+        $galleries = Galery::query()
         ->where('is_active', true)
         ->orderBy('event_date', 'desc')
         ->take(4)

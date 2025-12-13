@@ -50,3 +50,12 @@ Route::get('/buat-admin-darurat', function () {
         return 'Gagal: ' . $e->getMessage();
     }
 });
+
+Route::get('/perbaiki-storage', function () {
+    try {
+        \Illuminate\Support\Facades\Artisan::call('storage:link');
+        return 'Sukses! Storage berhasil di-link. Coba upload gambar sekarang.';
+    } catch (\Exception $e) {
+        return 'Gagal: ' . $e->getMessage();
+    }
+});

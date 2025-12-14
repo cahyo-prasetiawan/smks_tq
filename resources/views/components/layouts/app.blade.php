@@ -12,7 +12,7 @@
     {{-- PENTING: Link ke file favicon/logo --}}
    <link rel="icon" type="image/png" href="{{ asset('storage/' . $faviconPath) }}">
    
-    
+    dd($faviconPath);
    {{-- PENTING: Link ke file CSS utama --}}
 
 

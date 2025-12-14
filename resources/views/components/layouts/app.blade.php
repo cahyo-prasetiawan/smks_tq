@@ -10,9 +10,8 @@
     <title>{{ $title ?? 'SMKS IT Tanwirul Qulub' }}</title>
 
     {{-- PENTING: Link ke file favicon/logo --}}
-   <!-- <link rel="icon" type="image/png" href="{{ asset('storage/' . $faviconPath) }}">
-    -->
-   <link rel="icon" type="image/png" href="{{ asset($faviconPath) }}">
+   <link rel="icon" type="image/png" href="{{ asset('storage/' . $faviconPath) }}">
+   
     
    {{-- PENTING: Link ke file CSS utama --}}
 

@@ -73,6 +73,7 @@
                                 };
                                 $icon = !empty($item->icon) ? $item->icon : $colors['default_icon'];
                             @endphp
+                            
                             <a href="{{ route('peminatan.detail', $item->slug) }}" class="group/item flex flex-col items-center p-4 rounded-lg transition border border-transparent {{ $colors['hover_border'] }} {{ $colors['hover_bg'] }}">
                                 <div class="w-12 h-12 rounded-full {{ $colors['bg'] }} flex items-center justify-center {{ $colors['text'] }} mb-3 group-hover/item:bg-gray-800 group-hover/item:text-white transition shadow-sm">
                                     <i class="{{ $icon }}"></i>

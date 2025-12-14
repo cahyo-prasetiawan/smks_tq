@@ -54,7 +54,7 @@
                 </h2>
                 
                 <p id="hero-desc" class="text-base md:text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
-                    {!! html_entity_decode(html_entity_decode($firstSlide->desc)) !!}
+                    {{ $firstSlide->desc }}
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">

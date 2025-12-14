@@ -9,21 +9,23 @@
 
     <title>{{ $title ?? 'SMKS IT Tanwirul Qulub' }}</title>
 
-      @php
+    @php
+        // Pastikan Anda memuat Model di sini, jika tidak menggunakan View Composer
+        use App\Models\Profil; 
 
         // 🟢 TAMBAHKAN INI: Ambil Data Profil
-        $profil = \App\Models\Profil::query()->find(1); // Ambil record profil pertama
+        $profil = Profil::query()->find(1); // Ambil record profil pertama
         
-        // Definisikan variabel yang akan digunakan
-        $nama = $profil->nama ?? 'Nama Sekolah Default'; // Jika database kosong
+        // Definisikan variabel logo untuk Favicon
         // Sesuaikan path jika logo tidak ada, dan pastikan kolom logo Anda bernama 'logo'
-        $logo = $profil->logo ?? 'assets/default-logo.png';
+        // Nilai default ini adalah path di dalam folder public/
+        $faviconPath = $profil->logo ?? 'assets/default-favicon.png'; 
     @endphp
 
-
     {{-- PENTING: Link ke file favicon/logo --}}
-   <link rel="icon" type="image/png" href="{{ asset('storage/' . $profil-logo }}">
-   
+    {{-- Perbaikan: Menggunakan variabel $faviconPath yang sudah disiapkan di atas --}}
+    {{-- Perbaikan: Memastikan sintaks objek $faviconPath dimasukkan ke dalam asset() --}}
+    <link rel="icon" type="image/png" href="{{ asset('storage/' . $faviconPath) }}">
    
    {{-- PENTING: Link ke file CSS utama --}}
 

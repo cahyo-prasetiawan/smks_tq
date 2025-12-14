@@ -44,10 +44,10 @@
                     </div>
                     <p class="text-gray-400 text-xs md:text-sm mb-6">{{ $profil->alamat }}</p>
                     <div class="flex space-x-4">
-                        <a href="{{ $profil->facebook }}" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="{{ $profil->instagram }}" target="_blank"  class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-instagram"></i></a>
-                        <a href="{{ $profil->youtube }}" target="_blank"  class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-youtube"></i></a>
-                        <a href="{{ $profil->tiktok }}" target="_blank"  class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-tiktok"></i></a>
+                        <a href="{{ $profil->facebook }}" target="_blank" class="w-6 h-6 md:w-10 md:h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="{{ $profil->instagram }}" target="_blank"  class="w-6 h-6 md:w-10 md:h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-instagram"></i></a>
+                        <a href="{{ $profil->youtube }}" target="_blank"  class="w-6 h-6 md:w-10 md:h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-youtube"></i></a>
+                        <a href="{{ $profil->tiktok }}" target="_blank"  class="w-6 h-6 md:w-10 md:h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
 

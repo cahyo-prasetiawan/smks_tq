@@ -49,12 +49,12 @@
                     {{ $firstSlide->badge }}
                 </span>
                 
-                <h2 id="hero-title" class="text-4xl md:text-6xl font-heading font-bold text-white mb-6 text-shadow leading-tight">
-                  {!! html_entity_decode($firstSlide->title) !!}
+                <h2 id="hero-title" class="text-2xl md:text-6xl font-heading font-bold text-white mb-6 text-shadow leading-tight">
+                 {!! html_entity_decode(html_entity_decode($firstSlide->title)) !!}
                 </h2>
                 
-                <p id="hero-desc" class="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
-                    {!! html_entity_decode($firstSlide->desc) !!}
+                <p id="hero-desc" class="text-base md:text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
+                    {!! html_entity_decode(html_entity_decode($firstSlide->desc)) !!}
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -164,7 +164,7 @@
              setInterval(() => {
                 currentSlide = (currentSlide + 1) % slides.length;
                 changeSlide(currentSlide);
-            }, 5000);
+            }, 15000);
         }
     }
 </script>

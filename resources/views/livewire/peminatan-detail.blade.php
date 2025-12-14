@@ -71,7 +71,7 @@
                             <span class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center text-xs md:text-xl">
                                 <i class="fas fa-video"></i>
                             </span>
-                            Video Profil Peminatan
+                            Video Profil Program Keahlian
                         </h3>
                     </div>
                     
@@ -79,7 +79,7 @@
                         @if(!empty($videoEmbedUrl))
                             @if($videoType === 'file')
                                 <!-- Auto Play File Langsung (.mp4) -->
-                                <video class="w-full h-full object-contain" controls autoplay muted playsinline preload="metadata">
+                                <video class="w-full h-full object-contain" controls muted playsinline preload="metadata">
                                     <source src="{{ $videoEmbedUrl }}" type="video/mp4">
                                     Browser Anda tidak mendukung pemutaran video.
                                 </video>

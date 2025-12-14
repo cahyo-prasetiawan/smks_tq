@@ -68,6 +68,28 @@ class BeritaForm
                     ->default(now()),
 
                 // 6. Isi Berita (RICH EDITOR - Seperti MS Word)
+                // RichEditor::make('content')
+                //     ->label('Isi Berita')
+                //     ->columnSpanFull()
+                //     ->toolbarButtons([
+                //         'attachFiles', // Tombol upload gambar
+                //         'blockquote',
+                //         'bold',
+                //         'bulletList',
+                //         'codeBlock',
+                //         'h2',
+                //         'h3',
+                //         'italic',
+                //         'link',
+                //         'orderedList',
+                //         'redo',
+                //         'strike',
+                //         'underline',
+                //         'undo',
+                //         'table',
+                //     ])
+                //     ->fileAttachmentsDirectory('berita/konten'), // Folder simpan gambar di dalam artikel
+
                 RichEditor::make('content')
                     ->label('Isi Berita')
                     ->columnSpanFull()
@@ -87,6 +109,12 @@ class BeritaForm
                         'underline',
                         'undo',
                         'table',
+                        'superscript',
+                        'subscript',
+                        'fontSize',
+                        'fontFamily',
+                        'textColor',
+                        'backgroundColor',
                     ])
                     ->fileAttachmentsDirectory('berita/konten'), // Folder simpan gambar di dalam artikel
 

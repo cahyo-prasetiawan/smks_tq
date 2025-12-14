@@ -5,7 +5,7 @@
 
         <div class="text-center mb-16">
             <h2 class="text-primary font-bold tracking-wide uppercase text-xs md:text-sm mb-3">Teaching Factory</h2>
-            <h3 class="text-2xl md:text-4xl font-heading font-bold text-gray-900 leading-tight">Kompetensi Keahlian / Peminatan</h3>
+            <h3 class="text-2xl  md:text-5xl font-heading font-bold text-gray-900 leading-tight">Kompetensi Keahlian / Peminatan</h3>
             <p class="mt-6 text-xs md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Didukung fasilitas Teaching Factory standar industri untuk mencetak lulusan yang kompeten dan siap kerja.</p>
         </div>
 

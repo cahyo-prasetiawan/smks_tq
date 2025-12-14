@@ -50,11 +50,11 @@
                 </span>
                 
                 <h2 id="hero-title" class="text-4xl md:text-6xl font-heading font-bold text-white mb-6 text-shadow leading-tight">
-                    {!! $firstSlide->title !!}
+                  {!! html_entity_decode($firstSlide->title) !!}
                 </h2>
                 
                 <p id="hero-desc" class="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
-                    {{ $firstSlide->desc }}
+                    {!! html_entity_decode($firstSlide->desc) !!}
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">

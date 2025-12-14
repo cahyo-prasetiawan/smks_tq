@@ -9,10 +9,22 @@
 
     <title>{{ $title ?? 'SMKS IT Tanwirul Qulub' }}</title>
 
+      @php
+
+        // 🟢 TAMBAHKAN INI: Ambil Data Profil
+        $profil = \App\Models\Profil::query()->find(1); // Ambil record profil pertama
+        
+        // Definisikan variabel yang akan digunakan
+        $nama = $profil->nama ?? 'Nama Sekolah Default'; // Jika database kosong
+        // Sesuaikan path jika logo tidak ada, dan pastikan kolom logo Anda bernama 'logo'
+        $logo = $profil->logo ?? 'assets/default-logo.png';
+    @endphp
+
+
     {{-- PENTING: Link ke file favicon/logo --}}
-   <link rel="icon" type="image/png" href="{{ asset('storage/' . $faviconPath) }}">
+   <link rel="icon" type="image/png" href="{{ asset('storage/' . $profil-logo }}">
    
-    dd($faviconPath);
+   
    {{-- PENTING: Link ke file CSS utama --}}
 
 

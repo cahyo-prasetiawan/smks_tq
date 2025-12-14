@@ -31,14 +31,6 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-        View::composer('layouts.app', function ($view) {
-        // Ambil path logo dari database
-        $profil = Profil::first(); // Ambil baris profil (misalnya ID 1)
-
-        // Asumsi kolom di database bernama 'favicon_path'
-        $faviconPath = $profil ? $profil->logo : 'default/favicon.png'; 
-
-        $view->with('faviconPath', $faviconPath);
-        });
+       
     }
 }

@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\URL;
+use App\Models\Profil;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,5 +30,15 @@ class AppServiceProvider extends ServiceProvider
         if (config('app.env') === 'production') {
             URL::forceScheme('https');
         }
+
+        View::composer('layouts.app', function ($view) {
+        // Ambil path logo dari database
+        $profil = Profil::first(); // Ambil baris profil (misalnya ID 1)
+
+        // Asumsi kolom di database bernama 'favicon_path'
+        $faviconPath = $profil ? $profil->logo : 'default/favicon.png'; 
+
+        $view->with('faviconPath', $faviconPath);
+        });
     }
 }

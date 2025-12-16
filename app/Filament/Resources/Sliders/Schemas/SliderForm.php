@@ -25,45 +25,15 @@ class SliderForm
                         ->placeholder('Contoh: Selamat Datang')
                         ->required(),
 
-                    RichEditor::make('title')
-                    ->label('Judul Slider')
-                   
-                    ->toolbarButtons([
-                        'blockquote',
-                        'bold',
-                        'bulletList',
-                        'codeBlock',
-                        'h2',
-                        'h3',
-                        'italic',
-                        'link',
-                        'orderedList',
-                        'redo',
-                        'strike',
-                        'underline',
-                        'undo',
-                    ])
-                    ->required(),
+                    TextInput::make('title')
+                        ->label('Judul Slider')
+                        ->placeholder('Masukkan Judul')
+                        ->required(),
                  
-               RichEditor::make('desc')
-                    ->label('Isi Deskripsi')
-                    ->columnSpanFull()
-                    ->toolbarButtons([
-                        'blockquote',
-                        'bold',
-                        'bulletList',
-                        'codeBlock',
-                        'h2',
-                        'h3',
-                        'italic',
-                        'link',
-                        'orderedList',
-                        'redo',
-                        'strike',
-                        'underline',
-                        'undo',
-                        'table',
-                    ]), 
+                    TextInput::make('desc')
+                        ->label('Deskripsi')
+                        ->placeholder('Deskripsi Singkat')
+                        ->required(),
 
 
                     FileUpload::make('image')

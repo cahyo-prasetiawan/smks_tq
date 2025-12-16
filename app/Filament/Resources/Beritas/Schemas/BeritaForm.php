@@ -93,8 +93,6 @@ class BeritaForm
                 RichEditor::make('content')
                     ->label('Isi Berita')
                     ->columnSpanFull()
-                    
-                    ])
                     ->fileAttachmentsDirectory('berita/konten'), // Folder simpan gambar di dalam artikel
 
                 // 7. Status Aktif

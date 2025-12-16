@@ -39,22 +39,6 @@ class PeminatanForm
                 RichEditor::make('description')
                     ->label('Deskripsi')
                     ->columnSpanFull()
-                    ->toolbarButtons([ // Tombol upload gambar
-                        'blockquote',
-                        'bold',
-                        'bulletList',
-                        'codeBlock',
-                        'h2',
-                        'h3',
-                        'italic',
-                        'link',
-                        'orderedList',
-                        'redo',
-                        'strike',
-                        'underline',
-                        'undo',
-                        'table',
-                    ])
                     ->required(),
 
                 FileUpload::make('image')

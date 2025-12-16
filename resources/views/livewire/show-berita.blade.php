@@ -1,7 +1,7 @@
 <div>
     <x-navbar />
 
-    <div class="py-12 bg-gray-50 min-h-screen">
+    <div class="py-12 bg-gray-50 min-h-screen" data-aos="fade-down" data-aos-duration="1000" data-delay="300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="mb-8 flex items-center text-sm text-gray-500 overflow-x-auto whitespace-nowrap">
@@ -17,7 +17,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
                 <div class="lg:col-span-8">
-                    <article class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <article class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-aos="fade-up" data-aos-duration="1000" data-delay="400">
                         
                         <div class="relative w-full h-64 md:h-[400px]">
                             <img src="{{ asset('storage/' . $berita->image) }}" 

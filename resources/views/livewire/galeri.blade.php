@@ -23,7 +23,7 @@
     
     <x-navbar /> 
 
- <div class="relative bg-gray-900 border-b border-gray-800 pt-32 pb-10 overflow-hidden">
+ <div class="relative bg-gray-900 border-b border-gray-800 pt-32 pb-10 overflow-hidden" data-aos="fade-down" data-aos-duration="1000">
         <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
@@ -43,7 +43,7 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-        <div class="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[600px]">
+        <div class="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[600px]" data-aos="zomm-in" data-aos-duration="1200">
             @forelse($galleries as $item)
                 @php
                     // Logic Layout

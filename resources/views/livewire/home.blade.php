@@ -11,11 +11,11 @@
      <x-tefa-section :units="$peminatans" />
      
     <!-- 4. TRUST SECTION -->
-    <section class="py-16 bg-white border-y border-gray-100">
+    <section class="py-16 bg-white border-y border-gray-100" data-aos="fade-up" data-aos-duration="1000">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <!-- Item 1 -->
-                <div class="text-center p-4">
+                <div class="text-center p-4" data-aos="fede-right" data-aos-duration="1000" data-aos-delay="100">
                     <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                         <i class="fas fa-user-check"></i>
                     </div>
@@ -23,7 +23,7 @@
                     <p class="text-sm text-gray-500 mt-2">Setiap karya siswa dicek ketat oleh Guru Produktif.</p>
                 </div>
                 <!-- Item 2 -->
-                <div class="text-center p-4">
+                <div class="text-center p-4" data-aos="align-up" data-aos-duration="1000" data-aos-delay="200">
                     <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                         <i class="fas fa-wallet"></i>
                     </div>
@@ -31,7 +31,7 @@
                     <p class="text-sm text-gray-500 mt-2">Harga bersahabat karena didukung fasilitas sekolah.</p>
                 </div>
                 <!-- Item 3 -->
-                <div class="text-center p-4">
+                <div class="text-center p-4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300"> 
                     <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                         <i class="fas fa-cogs"></i>
                     </div>
@@ -39,7 +39,7 @@
                     <p class="text-sm text-gray-500 mt-2">Menggunakan mesin standar industri terbaru.</p>
                 </div>
                 <!-- Item 4 -->
-                <div class="text-center p-4">
+                <div class="text-center p-4" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="400">
                     <div class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                         <i class="fas fa-heart"></i>
                     </div>

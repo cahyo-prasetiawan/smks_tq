@@ -1,7 +1,7 @@
 <div>
     <x-navbar />
 
-     <div class="relative bg-gray-900 border-b border-gray-800 pt-32 pb-10 overflow-hidden">
+     <div class="relative bg-gray-900 border-b border-gray-800 pt-32 pb-10 overflow-hidden" data-aos="fade-down" data-aos-duration="1000">
         <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
@@ -26,7 +26,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
                 
                 <div class="lg:col-span-8">
-                    <div class="grid grid-cols-2 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-2 md:grid-cols-2 gap-6" data-aos="zoom-in" data-aos-duration="1000">
                         @forelse($beritas as $item)
                             @php
                                 $badgeColor = match($item->category) {

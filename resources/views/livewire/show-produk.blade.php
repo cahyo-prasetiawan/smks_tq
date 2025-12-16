@@ -1,7 +1,7 @@
 <div>
     <x-navbar />
 
-    <div class="py-16 bg-gray-50 min-h-screen pt-32">
+    <div class="py-16 bg-gray-50 min-h-screen pt-32" data-aos="fade-up" data-aos-duration="1000">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <nav class="flex mb-8 text-sm text-gray-500" aria-label="Breadcrumb">
@@ -13,9 +13,9 @@
             </nav>
 
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 bg-white p-6 md:p-10 rounded-xl shadow-lg border border-gray-100">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 bg-white p-6 md:p-10 rounded-xl shadow-lg border border-gray-100" data-aos="fade-up" data-aos-duration="1100">
                 
-                <div class="col-span-4 lg:col-span-6"> 
+                <div class="col-span-4 lg:col-span-6" data-aos="zoom-in" data-aos-duration="1200"> 
                     <div class="w-full bg-gray-200 rounded-lg overflow-hidden border border-gray-300 lg:sticky lg:top-28">
                         @if($this->product->image)
                             <img src="{{ asset('storage/' . $this->product->image) }}" 
@@ -58,7 +58,7 @@
                         </div> -->
 
                         <h3 class="text-sm md:text-xl font-bold text-gray-900 pt-2 border-l-4 border-green-500 pl-3">Deskripsi Produk</h3>
-                        <p class="text-black leading-relaxed pl-3 text-sm">
+                        <p class="text-black leading-relaxed pl-3 text-sm text-justify">
                             {{ $this->product->description ?? 'Tidak ada deskripsi rinci yang tersedia untuk produk ini.' }}
                         </p>
                         

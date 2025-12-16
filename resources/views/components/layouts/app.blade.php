@@ -27,7 +27,9 @@
     {{-- Perbaikan: Memastikan sintaks objek $faviconPath dimasukkan ke dalam asset() --}}
     <link rel="icon" type="image/png" href="{{ asset('storage/' . $faviconPath) }}">
    
-   {{-- PENTING: Link ke file CSS utama --}}
+     {{-- LINK Ke AOS JS --}}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
     {{-- Tailwind CSS via CDN (Untuk Development) --}}
@@ -93,6 +95,14 @@
                 }, 500); 
                 
             }, 500); 
+        });
+
+        AOS.init({
+            duration: 800,     // Kecepatan animasi (800ms)
+            once: false,       // FALSE agar animasi bisa berulang (bukan sekali saja)
+            mirror: true,      // TRUE agar elemen beranimasi keluar saat di-scroll melewati layar
+            offset: 120,       // Jarak (dalam px) dari posisi asli untuk memicu animasi
+            easing: 'ease-in-out', // Membuat gerakan lebih halus
         });
     </script>
 </body>

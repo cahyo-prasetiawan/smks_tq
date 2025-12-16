@@ -1,7 +1,7 @@
 <div>
     <x-navbar />
 
-   <div class="relative bg-gray-900 border-b border-gray-800 pt-32 pb-10 overflow-hidden">
+   <div class="relative bg-gray-900 border-b border-gray-800 pt-32 pb-10 overflow-hidden" data-aos="fade-down" data-aos-duration="1000" data-delay="300">
         <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
@@ -24,7 +24,7 @@
             <div class="bg-gray-50 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
                 <div class="grid grid-cols-1 lg:grid-cols-2">
                     
-                    <div class="relative h-64 lg:h-auto bg-gray-200">
+                    <div class="relative h-64 lg:h-auto bg-gray-200" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
                         <img src="{{ asset('storage/asset/logo.png') }}" 
                              alt="Siswa Belajar" 
                              class="absolute inset-0 w-full h-full object-cover">
@@ -38,7 +38,7 @@
                         </div>
                     </div>
 
-                    <div class="p-8 md:p-12 lg:py-16 bg-white">
+                    <div class="p-8 md:p-12 lg:py-16 bg-white" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
                         <div class="flex items-center mb-8">
                             <span class="w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-4">
                                 <i class="fas fa-list-ul text-xl"></i>

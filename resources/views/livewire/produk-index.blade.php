@@ -1,7 +1,7 @@
 <div>
     <x-navbar /> 
 
-    <div class="relative bg-gray-900 border-b border-gray-800 pt-32 pb-10 overflow-hidden">
+    <div class="relative bg-gray-900 border-b border-gray-800 pt-32 pb-10 overflow-hidden" data-aos="fade-down" data-aos-duration="1000">
         <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
@@ -79,7 +79,7 @@
                     </div>
 
                     
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6" data-aos="zoom-in" data-aos-duration="1100">
                         
                         @forelse($products as $item)
                             @php
@@ -123,8 +123,9 @@
                                         <span class="text-gray-400 text-xs font-normal">{{ $item->unit }}</span>
                                     </p> -->
 
-                                    <p class="line-clamp-2 text-gray-500">{!! $item->description !!}</p>
-                                    
+                                     <p class="line-clamp-2 text-gray-500 text-justify">  {!! Str::limit(strip_tags($item->description ?? 'Tidak ada deskripsi rinci yang tersedia untuk produk ini.'), 150) !!}
+                                    </p>
+                                   
                                     <span class="w-full mt-3 text-sm font-semibold {{ $theme['link_color'] }} group-hover:underline transition">
                                         Lihat Detail →
                                     </span>

@@ -9,7 +9,7 @@
     @endphp
 
     <!-- HERO HEADER SECTION -->
-    <div class="relative h-[35vh] min-h-[300px] flex items-center justify-center bg-gray-900 overflow-hidden">
+    <div class="relative h-[35vh] min-h-[300px] flex items-center justify-center bg-gray-900 overflow-hidden" data-aos="fade-down" data-aos-duration="1000" data-delay="300">
         <div class="absolute inset-0 z-0">
             <img src="{{ $imageUrl }}" class="w-full h-full object-cover opacity-30 blur-sm scale-105" alt="Background">
             <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-gray-900/30"></div>
@@ -34,14 +34,14 @@
     </div>
 
     <!-- MAIN CONTENT LAYOUT -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 -mt-16 relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 -mt-16 relative z-20" data-aos="fade-up" data-aos-duration="1000" data-delay="500">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
             
             <!-- Kiri: Konten Utama (8 Kolom) -->
             <div class="lg:col-span-8 space-y-8">
                 
                 <!-- Gambar Utama -->
-                <div class="bg-white p-2 rounded-2xl shadow-2xl transform hover:-translate-y-1 transition duration-500">
+                <div class="bg-white p-2 rounded-2xl shadow-2xl transform hover:-translate-y-1 transition duration-500" data-aos="zoom-in" data-aos-duration="1000" data-delay="200">
                     <div class="relative aspect-[16/9] rounded-xl overflow-hidden bg-gray-100">
                         <img src="{{ $imageUrl }}" 
                              class="w-full h-full object-cover hover:scale-105 transition duration-700" 
@@ -65,7 +65,7 @@
                 </div>
 
                 <!-- VIDEO SECTION (AUTOPLAY ENABLED) -->
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10" data-aos="zoom-in" data-aos-duration="1000" data-delay="600">
                     <div class="flex justify-between items-center mb-6">
                         <h3 class="text-xl md:text-2xl font-bold text-gray-900 flex items-center gap-3">
                             <span class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center text-xs md:text-xl">
@@ -125,7 +125,7 @@
                 </div>
 
                 <!-- Grid Fasilitas -->
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10" data-aos="fade-up" data-aos-duration="1000" data-delay="800">
                     <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
                         <span class="w-10 h-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center text-xs md:text-xl">
                             <i class="fas fa-layer-group"></i>

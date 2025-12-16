@@ -1,6 +1,6 @@
 @props(['posts']) <!-- Menerima data dari Home -->
 
-<section class="py-20 bg-white">
+<section class="py-20 bg-white" data-aos="fade-up" data-aos-delay="100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Header -->
@@ -23,7 +23,7 @@
                     };
                 @endphp
 
-                <article class="flex flex-col h-full bg-white rounded-lg overflow-hidden border border-gray-100 hover:shadow-lg transition group">
+                <article class="flex flex-col h-full bg-white rounded-lg overflow-hidden border border-gray-100 hover:shadow-lg transition group" data-aos="zoom-in" data-aos-delay="200">
                     <!-- Gambar & Kategori -->
                     <a href="#" class="relative h-48 overflow-hidden">
                         <img src="{{ asset('storage/' . $item->image) }}" 

@@ -4,7 +4,7 @@
     <x-navbar />
 
     <!-- HERO HEADER -->
-    <div class="relative h-[40vh] min-h-[350px] flex items-center justify-center bg-gray-900 overflow-hidden">
+    <div class="relative h-[40vh] min-h-[350px] flex items-center justify-center bg-gray-900 overflow-hidden" data-aos="fade-down" data-aos-duration="1000" data-delay="300">
         <!-- Background Pattern -->
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 opacity-90"></div>
@@ -29,7 +29,7 @@
     <!-- MAIN CONTENT: GRID PEMINATAN -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-gray-50 -mt-10 relative z-20 rounded-t-[3rem]">
         
-        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8" data-aos="zoom-out" data-aos-duration="800" data-delay="200">
             @forelse($peminatans as $index => $unit)
                 @php
                     // Helper Gambar

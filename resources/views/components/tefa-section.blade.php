@@ -1,6 +1,6 @@
 @props(['units'])
 
-<section id="tefa-section" class="py-10 sm:py-24 bg-gray-50">
+<section id="tefa-section" class="py-10 sm:py-24 bg-gray-50" data-aos="fade-up" data-aos-delay="100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="text-center mb-16">

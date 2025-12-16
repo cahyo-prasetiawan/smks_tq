@@ -2,7 +2,7 @@
     <x-navbar />
 
     <!-- 1. Hero Section -->
-    <div class="relative bg-gray-900 border-b border-gray-800 pt-32 pb-10 overflow-hidden">
+    <div class="relative bg-gray-900 border-b border-gray-800 pt-32 pb-10 overflow-hidden" data-aos="fade-down" data-aos-duration="1000" data-delay="300">
     <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
     
     <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full max-w-4xl bg-green-500/10 blur-[100px] rounded-full pointer-events-none"></div>
@@ -32,7 +32,7 @@
                     <!-- Background Dekoratif -->
                     <div class="absolute inset-0 bg-green-100 rounded-3xl transform rotate-2 scale-105 -z-10"></div>
                     
-                    <div class="grid grid-cols-2 gap-4 relative">
+                    <div class="grid grid-cols-2 gap-4 relative" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
                         <!-- Foto 1 (Kiri Atas) -->
                         <div class="relative group">
                             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" 
@@ -70,7 +70,7 @@
                 </div>
 
                 <!-- Teks Sambutan -->
-                <div class="lg:pl-8">
+                <div class="lg:pl-8" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
                     <span class="inline-block py-1 px-3 rounded-full bg-green-50 text-green-600 font-bold text-xs mb-4">Profil Sekolah</span>
                     <h2 class="text-2xl md:text-4xl font-heading font-bold text-gray-900 mb-6">SMKS IT Tanwirul Qulub</h2>
                     
@@ -83,20 +83,20 @@
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-2 gap-4" data-aos="fade-up-left" data-aos-duration="1000" data-aos-delay="500">
                         <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
                             <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Tahun Berdiri</div>
                             <div class="text-xl font-bold text-gray-900">2021</div>
                             <div class="text-[10px] text-green-600 mt-1">SK Yayasan No. 078</div>
                         </div>
                         
-                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100" data-aos="fade-up-right" data-aos-duration="1000" data-aos-delay="600">
                             <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Izin Operasional</div>
                             <div class="text-xl font-bold text-gray-900">Resmi</div>
                             <div class="text-[10px] text-blue-600 mt-1">Disdik Prov. Jambi</div>
                         </div>
                         
-                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 col-span-2">
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 col-span-2" data-aos="fade-up-left" data-aos-duration="1000" data-aos-delay="700">
                             <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Program Awal</div>
                             <div class="flex items-center justify-between">
                                 <div class="font-bold text-gray-900">Multimedia</div>
@@ -110,7 +110,7 @@
             </section>
 
     <section class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
         <div class="mb-10">
             <span class="text-green-600 font-bold tracking-wide uppercase text-xs md:text-sm mb-2 block">Tur Virtual</span>
             <h2 class="text-xl md:text-3xl font-heading font-bold text-gray-900">Video Profil Sekolah</h2>
@@ -172,10 +172,10 @@
                 </section>
 
     <!-- 4. Sejarah Singkat -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-gray-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center mb-12">
+        <div class="text-center mb-12" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="400">
             <span class="text-green-600 font-bold tracking-wider uppercase text-xs">Milestones</span>
             <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">Perjalanan Kami</h2>
             <div class="h-1 w-20 bg-green-500 mx-auto rounded-full"></div>
@@ -190,7 +190,7 @@
                     <div class="w-2 h-2 bg-white rounded-full"></div>
                 </div>
 
-                <div class="w-full md:w-5/12 ml-12 md:ml-0 md:mr-auto pl-4 md:pl-0 md:pr-8 text-left md:text-right">
+                <div class="w-full md:w-5/12 ml-12 md:ml-0 md:mr-auto pl-4 md:pl-0 md:pr-8 text-left md:text-right"  data-aos="fade-down" data-aos-duration="1000" data-aos-delay="400">>
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300">
                         <span class="text-green-600 font-bold text-lg block mb-1">Juli 2021</span>
                         <h4 class="text-xl font-bold text-gray-900 mb-2">Pendirian Yayasan</h4>
@@ -201,7 +201,7 @@
                 </div>
             </div>
 
-            <div class="relative flex flex-col md:flex-row items-center justify-between group">
+            <div class="relative flex flex-col md:flex-row items-center justify-between group" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="500">
                 <div class="absolute left-8 md:left-1/2 w-8 h-8 bg-white border-4 border-green-600 rounded-full shadow-lg transform -translate-x-1/2 z-10"></div>
 
                 <div class="w-full md:w-5/12 ml-12 md:ml-auto pl-4 md:pl-8">
@@ -215,7 +215,7 @@
                 </div>
             </div>
 
-            <div class="relative flex flex-col md:flex-row items-center justify-between group">
+            <div class="relative flex flex-col md:flex-row items-center justify-between group" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="600">
                 <div class="absolute left-8 md:left-1/2 w-8 h-8 bg-green-600 rounded-full border-4 border-white shadow-lg transform -translate-x-1/2 z-10 flex items-center justify-center">
                      <div class="w-2 h-2 bg-white rounded-full"></div>
                 </div>
@@ -236,7 +236,7 @@
 </section>
 
     <!-- 5. Identitas & Fasilitas -->
-    <section class="py-20 bg-slate-900 text-white">
+    <section class="py-20 bg-slate-900 text-white" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
                 

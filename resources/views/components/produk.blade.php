@@ -119,9 +119,9 @@
                                 Rp {{ number_format($item->price, 0, ',', '.') }} 
                                 <span class="text-gray-400 text-xs font-normal">{{ $item->unit }}</span>
                             </p> -->
-                            <p class="text-black leading-relaxed pl-3 text-sm">
-                            {{ $this->product->description ?? 'Tidak ada deskripsi rinci yang tersedia untuk produk ini.' }}
-                        </p>
+                            <p class="text-black leading-relaxed pl-3 text-sm text-justify">
+                           {!! Str::limit(strip_tags($item->description ?? 'Tidak ada deskripsi rinci yang tersedia untuk produk ini.'), 150) !!}
+                       </p>
                             
                             <!-- Simplified Detail Link -->
                             <span class="w-full mt-3 text-xs md:text-sm font-semibold {{ $theme['link_color'] }} group-hover:underline transition">

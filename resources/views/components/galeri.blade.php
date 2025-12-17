@@ -8,7 +8,7 @@
             this.activeItem = item;
             this.open = true;
         }
-    }">
+    }" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center mb-16">
@@ -19,7 +19,7 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[600px]">
+        <div class="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[600px]" data-aos="zoom-out" data-aos-duration="800" data-delay="200">
             @forelse($galleries as $item)
                 @php
                     // Logic Layout

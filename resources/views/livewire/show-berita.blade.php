@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="p-6 md:p-8">
-                            <article class="prose prose-lg prose-green max-w-none text-sm">
+                            <article class="prose prose-lg prose-green max-w-none text-sm leading-relaxed">
         {!! $berita->content !!}
     </article>
                         </div>

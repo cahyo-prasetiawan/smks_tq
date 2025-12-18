@@ -1,5 +1,5 @@
 <div>
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-gray-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- HEADER & SEARCH BAR -->

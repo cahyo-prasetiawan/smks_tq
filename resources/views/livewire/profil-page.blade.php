@@ -35,13 +35,13 @@
                     <div class="grid grid-cols-2 gap-4 relative" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
                         <!-- Foto 1 (Kiri Atas) -->
                         <div class="relative group">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" 
+                            <img src="{{ asset('storage/' . $profil->foto_pengasuh) }}" 
                                  alt="Kepala Sekolah Formal" 
                                  class="rounded-2xl shadow-lg w-full h-[400px] object-cover object-top group-hover:scale-[1.02] transition duration-500">
                             
                             <!-- Label Foto 1 -->
                              <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[90%] bg-white/95 backdrop-blur p-5 rounded-2xl shadow-xl text-center border border-gray-50 z-20">
-                                    <h3 class="font-bold text-gray-900 text-sm md:text-xl">Kyai M. Ali Manshur</h3>
+                                    <h3 class="font-bold text-gray-900 text-sm md:text-xl">{{ $profil->nama_pengasuh }}</h3>
                                     <p class="text-primary font-medium text-xs md:text-sm mt-1">Pengasuh Ponpes Tanwirul Qulub</p>
                                 </div>
                         </div>
@@ -49,13 +49,13 @@
                         <!-- Foto 2 (Kanan Bawah - Offset) -->
                         <div class="pt-12">
                             <div class="relative group">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop" 
+                                <img src="{{ asset('storage/' . $profil->foto_kepala_sekolah) }}" 
                                      alt="Kepala Sekolah Kegiatan" 
                                      class="rounded-2xl shadow-lg w-full h-[400px] object-cover object-center group-hover:scale-[1.02] transition duration-500">
                                 
                                 <!-- Label Foto 2 -->
                                <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[90%] bg-white/95 backdrop-blur p-5 rounded-2xl shadow-xl text-center border border-gray-50 z-20">
-                                    <h3 class="font-bold text-gray-900 text-bsm md:text-xl">Rudi Hardiyanto, S.Pd.</h3>
+                                    <h3 class="font-bold text-gray-900 text-bsm md:text-xl">{{ $profil->nama_kepala_sekolah }}</h3>
                                     <p class="text-primary font-medium  text-xs md:text-sm mt-1">Kepala SMKS IT Tanwirul Qulub</p>
                                 </div>
                             </div>

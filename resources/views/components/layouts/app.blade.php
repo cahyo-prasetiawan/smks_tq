@@ -149,6 +149,33 @@
             </div>
         </div>
 
+        <div class="fixed bottom-6 right-6 z-[999]" 
+     x-data="{ show: false }" 
+     x-init="setTimeout(() => show = true, 3000)" 
+     x-show="show"
+     x-transition:enter="transition ease-out duration-500"
+     x-transition:enter-start="translate-y-20 opacity-0"
+     x-transition:enter-end="translate-y-0 opacity-100">
+    
+    <div class="flex flex-col items-end gap-3">
+        <div class="bg-white px-4 py-2 rounded-lg shadow-xl border border-green-100 text-green-800 text-sm font-bold animate-bounce mb-[-8px]">
+            Daftar Sekarang! 🚀
+        </div>
+
+        <a href="{{ $profil->link_ppdb ?? '#' }}" 
+           class="bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-2xl flex items-center gap-3 transition-all duration-300 hover:scale-110 group">
+            
+            <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out font-bold whitespace-nowrap">
+                PPDB 2025
+            </span>
+            
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+        </a>
+        </div>
+    </div>
+
         <style>
             [x-cloak] { display: none !important; }
         </style>

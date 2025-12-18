@@ -144,7 +144,7 @@
                     </svg>
                 </a>
                 
-                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $profil->nomor_wa ?? '') }}" 
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $profil->telephon ?? '') }}" 
                    target="_blank" 
                    class="flex items-center justify-center w-full py-3 bg-white border-2 border-gray-100 hover:border-green-500 text-gray-700 font-bold rounded-xl transition duration-300 gap-2">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4" alt="WA">
@@ -160,7 +160,10 @@
              x-transition:enter-start="translate-y-4 opacity-0"
              x-transition:enter-end="translate-y-0 opacity-100"
              class="bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3 shadow-lg animate-bounce border-2 border-white">
-            PPDB 2025
+            <img src="{{ asset('storage/' . $profil->banner_sekolah) }}" 
+                     alt="Banner PPDB" 
+                     class="w-full h-full object-cover">
+                      PPDB 2025
         </div>
 
         <button @click="isOpen = !isOpen" 

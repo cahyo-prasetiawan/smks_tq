@@ -25,9 +25,16 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2">
                     
                     <div class="relative h-64 lg:h-auto bg-gray-200" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
-                        <img src="{{ asset('storage/asset/logo.png') }}" 
+                        @if($profil->banner_sekolah)
+                        <img src="{{ asset('storage/' . $profil->banner_sekolah) }}" 
                              alt="Siswa Belajar" 
                              class="absolute inset-0 w-full h-full object-cover">
+                        @else
+                        <div class="absolute inset-0 w-full h-full flex items-center justify-center text
+-gray-400">
+                            <i class="fas fa-image text-5xl"></i>
+                        </div>
+                        @endif
                         <div class="absolute inset-0 bg-green-900/40 mix-blend-multiply"></div>
                         
                         <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full bg-gradient-to-t from-black/80 to-transparent text-white">

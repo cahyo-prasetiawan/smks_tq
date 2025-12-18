@@ -89,7 +89,6 @@
 <!-- Container Utama -->
 <div class="fixed bottom-24 right-6 z-[9999]" x-data="{ isOpen: false }" x-cloak>
     
-    <!-- 1. KARTU INFORMASI (Muncul saat tombol diklik) -->
     <div x-show="isOpen" 
          x-transition:enter="transition ease-out duration-300"
          x-transition:enter-start="opacity-0 translate-y-10 scale-95"
@@ -98,9 +97,8 @@
          x-transition:leave-start="opacity-100 translate-y-0 scale-100"
          x-transition:leave-end="opacity-0 translate-y-10 scale-95"
          @click.away="isOpen = false"
-         class="mb-4 w-[320px] md:w-[380px] bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-green-100">
+         class="mb-6 w-[320px] md:w-[380px] bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-green-100">
         
-        <!-- Area Gambar Banner -->
         <div class="relative h-40 bg-green-700">
             @if(isset($profil->banner_sekolah) && $profil->banner_sekolah)
                 <img src="{{ asset('storage/' . $profil->banner_sekolah) }}" 
@@ -108,7 +106,6 @@
                      class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
             @else
-                <!-- Fallback jika banner belum diunggah -->
                 <div class="w-full h-full bg-gradient-to-br from-green-600 to-green-900 flex items-center justify-center p-6 text-center">
                     <p class="text-white font-bold uppercase tracking-tight leading-tight">
                         Penerimaan Peserta <br> Didik Baru 2025/2026
@@ -116,14 +113,12 @@
                 </div>
             @endif
             
-            <!-- Badge Status -->
             <div class="absolute top-4 left-4">
                 <span class="bg-yellow-400 text-green-900 text-[10px] font-black px-3 py-1 rounded-full uppercase shadow-lg">
                     Admission Open
                 </span>
             </div>
 
-            <!-- Tombol Close (X) di dalam kartu -->
             <button @click="isOpen = false" class="absolute top-3 right-3 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white rounded-full p-1.5 transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -131,17 +126,15 @@
             </button>
         </div>
 
-        <!-- Konten Detail -->
         <div class="p-6">
             <h4 class="font-extrabold text-gray-800 text-lg leading-tight">
                 Bergabunglah Bersama <br> 
-                <span class="text-green-600">{{ $profil->nama_sekolah ?? 'SMK STQ' }}</span>
+                <span class="text-green-600">{{ $profil->nama_sekolah ?? 'Sekolah Kami' }}</span>
             </h4>
             <p class="text-gray-500 text-xs mt-2 leading-relaxed">
                 Jadilah bagian dari generasi unggul, kompeten, dan religius. Kuota pendaftaran terbatas untuk setiap jurusan.
             </p>
             
-            <!-- Tombol Aksi -->
             <div class="mt-5 space-y-2">
                 <a href="{{ $profil->link_ppdb ?? '#' }}" 
                    class="flex items-center justify-center w-full py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow-lg shadow-green-100 transition-all transform hover:-translate-y-1">
@@ -161,32 +154,27 @@
         </div>
     </div>
 
-    <!-- 2. TOMBOL PEMICU (Floating Button) -->
-    <div class="flex flex-col items-end>
-        <!-- Notifikasi Badge (Muncul hanya jika kartu tertutup) -->
+    <div class="flex flex-col items-end">
         <div x-show="!isOpen" 
              x-transition:enter="transition ease-out duration-500 delay-500"
              x-transition:enter-start="translate-y-4 opacity-0"
              x-transition:enter-end="translate-y-0 opacity-100"
-             class="bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-2 shadow-lg animate-bounce border-2 border-white">
+             class="bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3 shadow-lg animate-bounce border-2 border-white">
             PPDB 2025
         </div>
 
         <button @click="isOpen = !isOpen" 
-                :class="isOpen ? 'bg-gray-800 rotate-90 scale-90' : 'bg-green-600 hover:bg-green-700'"
-                class="relative text-white p-5 rounded-full shadow-[0_10px_40px_rgba(22,163,74,0.4)] transition-all duration-300 transform active:scale-95 border-4 border-white group">
+                :class="isOpen ? 'bg-gray-800 rotate-90' : 'bg-green-600 hover:bg-green-700'"
+                class="relative text-white p-5 rounded-full shadow-2xl transition-all duration-300 transform active:scale-95 border-4 border-white group">
             
-            <!-- Icon Speaker/Lonceng (Saat Tertutup) -->
             <svg x-show="!isOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
             </svg>
 
-            <!-- Icon Close (Saat Terbuka) -->
             <svg x-show="isOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
 
-            <!-- Indikator Merah Berkedip -->
             <span x-show="!isOpen" class="absolute top-0 right-0 flex h-4 w-4">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-4 w-4 bg-red-600 border-2 border-white"></span>

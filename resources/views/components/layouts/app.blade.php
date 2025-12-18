@@ -81,104 +81,123 @@
     {{ $slot }}
 
 
-            <div x-data="{ open: false }" 
-            x-init="
-                if (!sessionStorage.getItem('ppdb_popup_shown')) {
-                    setTimeout(() => {
-                        open = true;
-                        sessionStorage.setItem('ppdb_popup_shown', 'true');
-                    }, 2000);
-                }
-            " 
-            x-show="open" 
-            x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0 scale-90"
-            x-transition:enter-end="opacity-100 scale-100"
-            x-transition:leave="transition ease-in duration-200"
-            x-transition:leave-start="opacity-100 scale-100"
-            x-transition:leave-end="opacity-0 scale-90"
-            class="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
-            x-cloak>
-            
-            <div @click.away="open = false" class="relative bg-white rounded-3xl overflow-hidden max-w-lg w-full shadow-2xl border border-white/20">
-                <button @click="open = false" class="absolute top-4 right-4 z-20 bg-black/20 hover:bg-black/40 text-white rounded-full p-2 transition">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
+      <!-- 
+    KODE FLOATING PPDB INTERAKTIF (BUTTON + EXPANDABLE BANNER)
+    Tempatkan kode ini di resources/views/layouts/app.blade.php sebelum tag </body>
+-->
 
-                <div class="relative h-56 bg-green-700 flex items-center justify-center">
-                    @if($profil->banner_sekolah)
-                        <img src="{{ asset('storage/' . $profil->banner_sekolah) }}" class="absolute inset-0 w-full h-full object-cover opacity-40">
-                    @endif
-                    <div class="relative text-center px-6">
-                        <div class="inline-block bg-yellow-400 text-green-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-2 shadow-sm">
-                            Admission Open
-                        </div>
-                        <h3 class="text-3xl font-black text-white leading-tight uppercase shadow-sm">
-                            PPDB TA 2025/2026
-                        </h3>
-                    </div>
-                </div>
-
-                <div class="p-8">
-                    <div class="flex items-start gap-4 mb-6 text-left">
-                        <div class="bg-green-100 p-3 rounded-xl">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-gray-800 leading-tight">Kuota Terbatas!</h4>
-                            <p class="text-sm text-gray-500 mt-1">Pendaftaran Gelombang 1 mendapatkan diskon biaya pangkal.</p>
-                        </div>
-                    </div>
-
-                    <div class="space-y-3">
-                        <a href="{{ $profil->link_ppdb ?? '#' }}" class="flex items-center justify-center w-full py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-2xl shadow-lg shadow-green-200 transition duration-300 group">
-                            <span>Daftar Sekarang</span>
-                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
-                        </a>
-                        
-                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $profil->nomor_wa) }}" target="_blank" class="flex items-center justify-center w-full py-4 bg-white border-2 border-gray-100 hover:border-green-500 text-gray-700 font-bold rounded-2xl transition duration-300 gap-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-5 h-5" alt="WA">
-                            Hubungi Admin
-                        </a>
-                    </div>
-                    
-                    <p class="mt-6 text-[11px] text-gray-400 text-center uppercase tracking-widest">
-                        {{ $profil->nama_sekolah }} &bull; Unggul & Religius
+<!-- Container Utama -->
+<div class="fixed bottom-6 right-6 z-[9999]" x-data="{ isOpen: false }" x-cloak>
+    
+    <!-- 1. KARTU INFORMASI (Muncul saat tombol diklik) -->
+    <div x-show="isOpen" 
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 translate-y-10 scale-95"
+         x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+         x-transition:leave-end="opacity-0 translate-y-10 scale-95"
+         @click.away="isOpen = false"
+         class="mb-4 w-[320px] md:w-[380px] bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-green-100">
+        
+        <!-- Area Gambar Banner -->
+        <div class="relative h-40 bg-green-700">
+            @if(isset($profil->banner_sekolah) && $profil->banner_sekolah)
+                <img src="{{ asset('storage/' . $profil->banner_sekolah) }}" 
+                     alt="Banner PPDB" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            @else
+                <!-- Fallback jika banner belum diunggah -->
+                <div class="w-full h-full bg-gradient-to-br from-green-600 to-green-900 flex items-center justify-center p-6 text-center">
+                    <p class="text-white font-bold uppercase tracking-tight leading-tight">
+                        Penerimaan Peserta <br> Didik Baru 2025/2026
                     </p>
                 </div>
+            @endif
+            
+            <!-- Badge Status -->
+            <div class="absolute top-4 left-4">
+                <span class="bg-yellow-400 text-green-900 text-[10px] font-black px-3 py-1 rounded-full uppercase shadow-lg">
+                    Admission Open
+                </span>
             </div>
+
+            <!-- Tombol Close (X) di dalam kartu -->
+            <button @click="isOpen = false" class="absolute top-3 right-3 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white rounded-full p-1.5 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
         </div>
 
-        <div class="fixed bottom-6 right-6 z-[999]" 
-     x-data="{ show: false }" 
-     x-init="setTimeout(() => show = true, 3000)" 
-     x-show="show"
-     x-transition:enter="transition ease-out duration-500"
-     x-transition:enter-start="translate-y-20 opacity-0"
-     x-transition:enter-end="translate-y-0 opacity-100">
-    
-    <div class="flex flex-col items-end gap-3">
-        <div class="bg-white px-4 py-2 rounded-lg shadow-xl border border-green-100 text-green-800 text-sm font-bold animate-bounce mb-[-8px]">
-            Daftar Sekarang! 🚀
-        </div>
-
-        <a href="{{ $profil->link_ppdb ?? '#' }}" 
-           class="bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-2xl flex items-center gap-3 transition-all duration-300 hover:scale-110 group">
+        <!-- Konten Detail -->
+        <div class="p-6">
+            <h4 class="font-extrabold text-gray-800 text-lg leading-tight">
+                Bergabunglah Bersama <br> 
+                <span class="text-green-600">{{ $profil->nama_sekolah ?? 'SMK STQ' }}</span>
+            </h4>
+            <p class="text-gray-500 text-xs mt-2 leading-relaxed">
+                Jadilah bagian dari generasi unggul, kompeten, dan religius. Kuota pendaftaran terbatas untuk setiap jurusan.
+            </p>
             
-            <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out font-bold whitespace-nowrap">
-                PPDB 2025
-            </span>
-            
-            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-            </svg>
-        </a>
+            <!-- Tombol Aksi -->
+            <div class="mt-5 space-y-2">
+                <a href="{{ $profil->link_ppdb ?? '#' }}" 
+                   class="flex items-center justify-center w-full py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow-lg shadow-green-100 transition-all transform hover:-translate-y-1">
+                    <span>Daftar Sekarang</span>
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
+                
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $profil->nomor_wa ?? '') }}" 
+                   target="_blank" 
+                   class="flex items-center justify-center w-full py-3 bg-white border-2 border-gray-100 hover:border-green-500 text-gray-700 font-bold rounded-xl transition duration-300 gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4" alt="WA">
+                    Chat Panitia
+                </a>
+            </div>
         </div>
     </div>
 
-        <style>
-            [x-cloak] { display: none !important; }
-        </style>
+    <!-- 2. TOMBOL PEMICU (Floating Button) -->
+    <div class="flex flex-col items-end">
+        <!-- Notifikasi Badge (Muncul hanya jika kartu tertutup) -->
+        <div x-show="!isOpen" 
+             x-transition:enter="transition ease-out duration-500 delay-500"
+             x-transition:enter-start="translate-y-4 opacity-0"
+             x-transition:enter-end="translate-y-0 opacity-100"
+             class="bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-2 shadow-lg animate-bounce border-2 border-white">
+            PPDB 2025
+        </div>
+
+        <button @click="isOpen = !isOpen" 
+                :class="isOpen ? 'bg-gray-800 rotate-90 scale-90' : 'bg-green-600 hover:bg-green-700'"
+                class="relative text-white p-5 rounded-full shadow-[0_10px_40px_rgba(22,163,74,0.4)] transition-all duration-300 transform active:scale-95 border-4 border-white group">
+            
+            <!-- Icon Speaker/Lonceng (Saat Tertutup) -->
+            <svg x-show="!isOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+            </svg>
+
+            <!-- Icon Close (Saat Terbuka) -->
+            <svg x-show="isOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+
+            <!-- Indikator Merah Berkedip -->
+            <span x-show="!isOpen" class="absolute top-0 right-0 flex h-4 w-4">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-4 w-4 bg-red-600 border-2 border-white"></span>
+            </span>
+        </button>
+    </div>
+</div>
+
+<style>
+    [x-cloak] { display: none !important; }
+</style>
 
     {{-- WAJIB: Livewire Scripts (Agar interaksi tombol/slider jalan) --}}
     @livewireScripts

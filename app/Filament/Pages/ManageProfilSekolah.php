@@ -102,14 +102,6 @@ class ManageProfilSekolah extends Page implements HasForms
                              ->maxSize(5120)
                              ->visibility('public'),
 
-                        FileUpload::make('benner_sekolah')
-                            ->label('Banner Sekolah')
-                            ->image()
-                            ->disk('public')
-                            ->directory('foto-benner')
-                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
-                            ->maxSize(5120)
-                            ->visibility('public'),
                         
                         fileUpload::make('banner_sekolah')
                             ->label('Banner Sekolah')
@@ -117,7 +109,7 @@ class ManageProfilSekolah extends Page implements HasForms
                             ->disk('public')
                             ->directory('banner-sekolah')
                             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
-                            ->maxSize(50240) // Maksimal 10MB
+                            ->maxSize(10240) // Maksimal 10MB
                             ->visibility('public')
                             ->columnSpanFull(),
 

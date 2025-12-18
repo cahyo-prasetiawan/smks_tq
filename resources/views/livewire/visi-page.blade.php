@@ -32,7 +32,8 @@
                         @else
                         <div class="absolute inset-0 w-full h-full flex items-center justify-center text
 -gray-400">
-                            <i class="fas fa-image text-5xl"></i>
+                            <i class="fas fa-image text-5xl"></i><br>
+                            <span class="mt-2 text-sm">Banner Sekolah Belum Dimasukkan</span>
                         </div>
                         @endif
                         <div class="absolute inset-0 bg-green-900/40 mix-blend-multiply"></div>

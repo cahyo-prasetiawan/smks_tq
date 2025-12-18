@@ -190,7 +190,7 @@
                     <div class="w-2 h-2 bg-white rounded-full"></div>
                 </div>
 
-                <div class="w-full md:w-5/12 ml-12 md:ml-0 md:mr-auto pl-4 md:pl-0 md:pr-8 text-left md:text-right"  data-aos="fade-down" data-aos-duration="1000" data-aos-delay="400">>
+                <div class="w-full md:w-5/12 ml-12 md:ml-0 md:mr-auto pl-4 md:pl-0 md:pr-8 text-left md:text-right"  data-aos="fade-down" data-aos-duration="1000" data-aos-delay="400">
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300">
                         <span class="text-green-600 font-bold text-lg block mb-1">Juli 2021</span>
                         <h4 class="text-xl font-bold text-gray-900 mb-2">Pendirian Yayasan</h4>

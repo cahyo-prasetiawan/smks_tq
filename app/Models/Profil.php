@@ -31,22 +31,36 @@ class Profil extends Model
         );
     }
 
-     protected static function booted(): void
-    {
-        // Event saat data AKAN dihapus (deleting)
-        static::updating(function ($profil) {
-    // Cek apakah kolom 'logo' telah diubah
-    if ($profil->isDirty('logo') && ($profil->getOriginal('logo') !== null)) {
+    protected static function booted()
+{
+    static::updating(function ($profil) {
+        // Daftar kolom gambar yang ingin dipantau
+        $imageFields = ['logo', 'foto_pengasuh', 'foto_kepala_sekolah', 'banner_sekolah'];
+
+        foreach ($imageFields as $field) {
+            // 1. Cek apakah kolom tersebut berubah (isDirty)
+            // 2. Pastikan nilai lamanya tidak kosong (null)
+            if ($profil->isDirty($field) && $profil->getOriginal($field) !== null) {
+                
+                $oldPath = $profil->getOriginal($field);
+
+                // Hapus file lama dari disk public
+                if (Storage::disk('public')->exists($oldPath)) {
+                    Storage::disk('public')->delete($oldPath);
+                }
+            }
+        }
+    });
+
+    // Opsional: Hapus semua gambar jika data profil dihapus (Delete)
+    static::deleting(function ($profil) {
+        $imageFields = ['logo', 'foto_pengasuh', 'foto_kepala_sekolah', 'banner_sekolah'];
         
-        // Dapatkan path logo lama
-        $oldLogoPath = $profil->getOriginal('logo');
-        
-        // Hapus file lama
-        Storage::disk('public')->delete($oldLogoPath);
-    }
-});
-        
-        // Opsional: Event saat data DIUPDATE (ganti gambar)
-        // Filament biasanya menangani ini otomatis, tapi jika tidak, bisa pakai event 'updating'.
+        foreach ($imageFields as $field) {
+            if ($profil->$field) {
+                Storage::disk('public')->delete($profil->$field);
+            }
+        }
+    });
     }
 }

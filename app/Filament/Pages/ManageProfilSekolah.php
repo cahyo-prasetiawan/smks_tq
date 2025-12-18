@@ -76,6 +76,51 @@ class ManageProfilSekolah extends Page implements HasForms
                             ->label('NPSN')
                             ->required(),
 
+                        TextInput::make('nama_pengasuh')
+                            ->label('Nama Pengasuh')
+                            ->required(),
+                        
+                        FileUpload::make('foto_pengasuh')
+                            ->label('Foto Pengasuh')
+                            ->image()
+                            ->disk('public')
+                            ->directory('foto-pengasuh')
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
+                            ->maxSize(5120)
+                            ->visibility('public'),
+
+                        TextInput::make('nama_kepala_sekolah')
+                            ->label('Nama Kepala Sekolah')
+                            ->required(),
+                         
+                        FileUpload::make('foto_kepala_sekolah')
+                             ->label('Foto Kepala Sekolah')
+                             ->image()
+                             ->disk('public')
+                             ->directory('foto-kepala-sekolah')
+                             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
+                             ->maxSize(5120)
+                             ->visibility('public'),
+
+                        FileUpload::make('benner_sekolah')
+                            ->label('Banner Sekolah')
+                            ->image()
+                            ->disk('public')
+                            ->directory('foto-benner')
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
+                            ->maxSize(5120)
+                            ->visibility('public'),
+                        
+                        fileUpload::make('banner_sekolah')
+                            ->label('Banner Sekolah')
+                            ->image()
+                            ->disk('public')
+                            ->directory('banner-sekolah')
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
+                            ->maxSize(50240) // Maksimal 10MB
+                            ->visibility('public')
+                            ->columnSpanFull(),
+
                         TextInput::make('email')
                             ->email(),
                         

@@ -87,7 +87,7 @@
 -->
 
 <!-- Container Utama -->
-<div class="fixed bottom-6 right-6 z-[9999]" x-data="{ isOpen: false }" x-cloak>
+<div class="fixed bottom-24 right-6 z-[9999]" x-data="{ isOpen: false }" x-cloak>
     
     <!-- 1. KARTU INFORMASI (Muncul saat tombol diklik) -->
     <div x-show="isOpen" 
@@ -162,7 +162,7 @@
     </div>
 
     <!-- 2. TOMBOL PEMICU (Floating Button) -->
-    <div class="flex flex-col items-end">
+    <div class="flex flex-col items-end>
         <!-- Notifikasi Badge (Muncul hanya jika kartu tertutup) -->
         <div x-show="!isOpen" 
              x-transition:enter="transition ease-out duration-500 delay-500"

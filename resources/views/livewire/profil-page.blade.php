@@ -35,10 +35,15 @@
                     <div class="grid grid-cols-2 gap-4 relative" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
                         <!-- Foto 1 (Kiri Atas) -->
                         <div class="relative group">
-                            <img src="{{ asset('storage/' . $profil->foto_pengasuh) }}" 
-                                 alt="Kepala Sekolah Formal" 
-                                 class="rounded-2xl shadow-lg w-full h-[400px] object-cover object-top group-hover:scale-[1.02] transition duration-500">
-                            
+                           @if($profil->foto_pengasuh)
+                                <img src="{{ asset('storage/' . $profil->foto_pengasuh) }}" 
+                                    alt="Foto Pengasuh" 
+                                    class="rounded-2xl shadow-lg w-full h-[400px] object-cover object-top group-hover:scale-[1.02] transition duration-500">
+                            @else
+                                <div class="rounded-2xl shadow-lg w-full h-[400px] flex items-center justify-center bg-gray-100 border-2 border-dashed border-gray-300">
+                                    <p class="text-gray-500 italic text-lg">Foto tidak tersedia</p>
+                                </div>
+                            @endif
                             <!-- Label Foto 1 -->
                              <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[90%] bg-white/95 backdrop-blur p-5 rounded-2xl shadow-xl text-center border border-gray-50 z-20">
                                     <h3 class="font-bold text-gray-900 text-sm md:text-xl">{{ $profil->nama_pengasuh }}</h3>
@@ -49,10 +54,19 @@
                         <!-- Foto 2 (Kanan Bawah - Offset) -->
                         <div class="pt-12">
                             <div class="relative group">
-                                <img src="{{ asset('storage/' . $profil->foto_kepala_sekolah) }}" 
-                                     alt="Kepala Sekolah Kegiatan" 
-                                     class="rounded-2xl shadow-lg w-full h-[400px] object-cover object-center group-hover:scale-[1.02] transition duration-500">
-                                
+                                @if($profil->foto_kepala_sekolah)
+                                    <img src="{{ asset('storage/' . $profil->foto_kepala_sekolah) }}" 
+                                        alt="Kepala Sekolah" 
+                                        class="rounded-2xl shadow-lg w-full h-[400px] object-cover object-center group-hover:scale-[1.02] transition duration-500">
+                                @else
+                                    <div class="rounded-2xl shadow-lg w-full h-[400px] flex flex-col items-center justify-center bg-gray-50 border-2 border-dashed border-gray-200 group-hover:bg-gray-100 transition duration-500">
+                                        <svg class="w-12 h-12 text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                        </svg>
+                                        <p class="text-gray-400 font-medium">Foto Kepala Sekolah</p>
+                                        <p class="text-gray-400 text-sm">Belum diunggah</p>
+                                    </div>
+                                @endif
                                 <!-- Label Foto 2 -->
                                <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[90%] bg-white/95 backdrop-blur p-5 rounded-2xl shadow-xl text-center border border-gray-50 z-20">
                                     <h3 class="font-bold text-gray-900 text-bsm md:text-xl">{{ $profil->nama_kepala_sekolah }}</h3>

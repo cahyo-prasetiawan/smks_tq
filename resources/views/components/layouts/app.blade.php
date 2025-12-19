@@ -99,7 +99,7 @@
          @click.away="isOpen = false"
          class="mb-6 w-[320px] md:w-[380px] bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-green-100">
         
-        <div class="relative h-40 bg-green-700">
+        <div class="relative h-85 bg-green-700">
             @if(isset($profil->banner_sekolah) && $profil->banner_sekolah)
                 <img src="{{ asset('storage/' . $profil->banner_sekolah) }}" 
                      alt="Banner PPDB" 
@@ -160,9 +160,6 @@
              x-transition:enter-start="translate-y-4 opacity-0"
              x-transition:enter-end="translate-y-0 opacity-100"
              class="bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3 shadow-lg animate-bounce border-2 border-white">
-            <img src="{{ asset('storage/' . $profil->banner_sekolah) }}" 
-                     alt="Banner PPDB" 
-                     class="w-full h-full object-cover">
                       PPDB 2025
         </div>
 

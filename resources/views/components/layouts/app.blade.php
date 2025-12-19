@@ -144,20 +144,27 @@
                     </svg>
                 </a>
                 @php
-                $contactNumber = $profil->telepon;
+                    $contactNumber = $profil->telepon;
+                    
+                    // 1. Bersihkan semua karakter non-digit
+                    $waNumber = preg_replace('/[^0-9]/', '', $contactNumber);
 
-                dd($contactNumber);
-                $waNumber = preg_replace('/[^0-9]/', '', $contactNumber);
-                            if (substr($waNumber, 0, 1) === '0') {
-                                $waNumber = '62' . substr($waNumber, 1);
-                            }
-
+                    // 2. Normalisasi awalan ke format 62
+                    if (str_starts_with($waNumber, '0')) {
+                        // Jika mulai dengan 0, ganti 0 dengan 62
+                        $waNumber = '62' . substr($waNumber, 1);
+                    } elseif (str_starts_with($waNumber, '8')) {
+                        // Jika mulai dengan 8, tambahkan 62 di depan
+                        $waNumber = '62' . $waNumber;
+                    }
+                    // Jika sudah dimulai dengan 62, biarkan saja
                 @endphp
+
                 <a href="https://wa.me/{{ $waNumber }}" 
-                   target="_blank" 
-                   class="flex items-center justify-center w-full py-3 bg-white border-2 border-gray-100 hover:border-green-500 text-gray-700 font-bold rounded-xl transition duration-300 gap-2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4" alt="WA">
-                    Chat Panitia
+                target="_blank" 
+                class="flex items-center justify-center w-full py-3 bg-white border-2 border-gray-100 hover:border-green-500 text-gray-700 font-bold rounded-xl transition duration-300 gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-5 h-5" alt="WA">
+                    <span>Chat Panitia</span>
                 </a>
             </div>
         </div>

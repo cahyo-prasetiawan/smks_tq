@@ -99,7 +99,7 @@
          @click.away="isOpen = false"
          class="mb-6 w-[320px] md:w-[380px] bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-green-100">
         
-        <div class="relative h-85 bg-green-700">
+        <div class="relative h-65 bg-green-700">
             @if(isset($profil->banner_sekolah) && $profil->banner_sekolah)
                 <img src="{{ asset('storage/' . $profil->banner_sekolah) }}" 
                      alt="Banner PPDB" 
@@ -143,8 +143,16 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                     </svg>
                 </a>
-                
-                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $profil->telephon ?? '') }}" 
+                @php
+                $contactNumber = $profil->telepon;
+
+                $waNumber = preg_replace('/[^0-9]/', '', $contactNumber);
+                            if (substr($waNumber, 0, 1) === '0') {
+                                $waNumber = '62' . substr($waNumber, 1);
+                            }
+
+                @endphp
+                <a href="https://wa.me/{{ $waNumber }}?text={{ urlencode($textMessage) }}" 
                    target="_blank" 
                    class="flex items-center justify-center w-full py-3 bg-white border-2 border-gray-100 hover:border-green-500 text-gray-700 font-bold rounded-xl transition duration-300 gap-2">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4" alt="WA">

@@ -146,13 +146,14 @@
                 @php
                 $contactNumber = $profil->telepon;
 
+                dd($contactNumber);
                 $waNumber = preg_replace('/[^0-9]/', '', $contactNumber);
                             if (substr($waNumber, 0, 1) === '0') {
                                 $waNumber = '62' . substr($waNumber, 1);
                             }
 
                 @endphp
-                <a href="https://wa.me/{{ $waNumber }}?text={{ urlencode($textMessage) }}" 
+                <a href="https://wa.me/{{ $waNumber }}" 
                    target="_blank" 
                    class="flex items-center justify-center w-full py-3 bg-white border-2 border-gray-100 hover:border-green-500 text-gray-700 font-bold rounded-xl transition duration-300 gap-2">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4" alt="WA">

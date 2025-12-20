@@ -25,8 +25,8 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2">
                     
                     <div class="relative h-64 lg:h-auto bg-gray-200" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
-                        @if($profil->banner_sekolah)
-                        <img src="{{ asset('storage/' . $profil->banner_sekolah) }}" 
+                        @if($profil->logo)
+                        <img src="{{ asset('storage/' . $profil->logo) }}" 
                              alt="Siswa Belajar" 
                              class="absolute inset-0 w-full h-full object-cover">
                         @else

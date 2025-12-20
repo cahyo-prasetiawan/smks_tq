@@ -99,7 +99,7 @@
          @click.away="isOpen = false"
          class="mb-6 w-[320px] md:w-[380px] bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden border border-green-100">
         
-        <div class="relative h-65 bg-green-700">
+        <div class="relative h-50 bg-green-700">
             @if(isset($profil->banner_sekolah) && $profil->banner_sekolah)
                 <img src="{{ asset('storage/' . $profil->banner_sekolah) }}" 
                      alt="Banner PPDB" 
@@ -115,7 +115,7 @@
             
             <div class="absolute top-4 left-4">
                 <span class="bg-yellow-400 text-green-900 text-[10px] font-black px-3 py-1 rounded-full uppercase shadow-lg">
-                    Admission Open
+                    PPDB Open
                 </span>
             </div>
 
@@ -129,10 +129,10 @@
         <div class="p-6">
             <h4 class="font-extrabold text-gray-800 text-lg leading-tight">
                 Bergabunglah Bersama <br> 
-                <span class="text-green-600">{{ $profil->nama_sekolah ?? 'Sekolah Kami' }}</span>
+                <span class="text-green-600">{{ $profil->nama ?? 'Sekolah Kami' }}</span>
             </h4>
             <p class="text-gray-500 text-xs mt-2 leading-relaxed">
-                Jadilah bagian dari generasi unggul, kompeten, dan religius. Kuota pendaftaran terbatas untuk setiap jurusan.
+                Jadilah bagian dari generasi unggul, kompeten, dan religius. Ayo daftarkan dirimu.
             </p>
             
             <div class="mt-5 space-y-2">
@@ -143,29 +143,27 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                     </svg>
                 </a>
-                @php
-                    $contactNumber = $profil->telepon;
-                    
-                    // 1. Bersihkan semua karakter non-digit
-                    $waNumber = preg_replace('/[^0-9]/', '', $contactNumber);
+               @php
+                $contactNumber = $profil->telepon;
+                
+                $waNumber = preg_replace('/[^0-9]/', '', $contactNumber);
+                
+                if (str_starts_with($waNumber, '0')) {
+                    $waNumber = '62' . substr($waNumber, 1);
+                } elseif (str_starts_with($waNumber, '8')) {
+                    $waNumber = '62' . $waNumber;
+                }
 
-                    // 2. Normalisasi awalan ke format 62
-                    if (str_starts_with($waNumber, '0')) {
-                        // Jika mulai dengan 0, ganti 0 dengan 62
-                        $waNumber = '62' . substr($waNumber, 1);
-                    } elseif (str_starts_with($waNumber, '8')) {
-                        // Jika mulai dengan 8, tambahkan 62 di depan
-                        $waNumber = '62' . $waNumber;
-                    }
-                    // Jika sudah dimulai dengan 62, biarkan saja
-                @endphp
+                $message = "Halo Panitia, saya ingin tanya tentang PPDB.";
+                $waUrl = "https://wa.me/" . $waNumber . "?text=" . urlencode($message);
+            @endphp
 
-                <a href="https://wa.me/{{ $waNumber }}" 
-                target="_blank" 
-                class="flex items-center justify-center w-full py-3 bg-white border-2 border-gray-100 hover:border-green-500 text-gray-700 font-bold rounded-xl transition duration-300 gap-2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-5 h-5" alt="WA">
-                    <span>Chat Panitia</span>
-                </a>
+            <a href="{{ $waUrl }}" 
+            target="_blank" 
+            class="flex items-center justify-center w-full py-3 bg-white border-2 border-gray-100 hover:border-green-500 text-gray-700 font-bold rounded-xl transition duration-300 gap-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-5 h-5" alt="WA">
+                <span>Chat Panitia (PPDB)</span>
+            </a>
             </div>
         </div>
     </div>
@@ -176,7 +174,7 @@
              x-transition:enter-start="translate-y-4 opacity-0"
              x-transition:enter-end="translate-y-0 opacity-100"
              class="bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3 shadow-lg animate-bounce border-2 border-white">
-                      PPDB 2025
+                      INFO PPDB 2025
         </div>
 
         <button @click="isOpen = !isOpen" 
